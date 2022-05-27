@@ -1,0 +1,11 @@
+D:\MyProgram\C#\SRPGApp\InMemoryInfrastructure\bin\Debug\InMemoryInfrastructure.dll
+D:\MyProgram\C#\SRPGApp\InMemoryInfrastructure\bin\Debug\InMemoryInfrastructure.pdb
+D:\MyProgram\C#\SRPGApp\InMemoryInfrastructure\obj\Debug\InMemoryInfrastructure.csproj.AssemblyReference.cache
+D:\MyProgram\C#\SRPGApp\InMemoryInfrastructure\obj\Debug\InMemoryInfrastructure.csproj.CoreCompileInputs.cache
+D:\MyProgram\C#\SRPGApp\InMemoryInfrastructure\obj\Debug\InMemoryInfrastructure.dll
+D:\MyProgram\C#\SRPGApp\InMemoryInfrastructure\obj\Debug\InMemoryInfrastructure.pdb
+D:\MyProgram\C#\SRPGApp\InMemoryInfrastructure\bin\Debug\Domain.dll
+D:\MyProgram\C#\SRPGApp\InMemoryInfrastructure\bin\Debug\UseCase.dll
+D:\MyProgram\C#\SRPGApp\InMemoryInfrastructure\bin\Debug\Domain.pdb
+D:\MyProgram\C#\SRPGApp\InMemoryInfrastructure\bin\Debug\UseCase.pdb
+D:\MyProgram\C#\SRPGApp\InMemoryInfrastructure\obj\Debug\InMemoryInfrastructure.csproj.CopyComplete

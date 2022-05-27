@@ -1,0 +1,9 @@
+D:\MyProgram\C#\SRPGApp\UseCase\bin\Debug\UseCase.dll
+D:\MyProgram\C#\SRPGApp\UseCase\bin\Debug\UseCase.pdb
+D:\MyProgram\C#\SRPGApp\UseCase\obj\Debug\UseCase.csproj.AssemblyReference.cache
+D:\MyProgram\C#\SRPGApp\UseCase\obj\Debug\UseCase.csproj.CoreCompileInputs.cache
+D:\MyProgram\C#\SRPGApp\UseCase\obj\Debug\UseCase.dll
+D:\MyProgram\C#\SRPGApp\UseCase\obj\Debug\UseCase.pdb
+D:\MyProgram\C#\SRPGApp\UseCase\bin\Debug\Domain.dll
+D:\MyProgram\C#\SRPGApp\UseCase\bin\Debug\Domain.pdb
+D:\MyProgram\C#\SRPGApp\UseCase\obj\Debug\UseCase.csproj.CopyComplete

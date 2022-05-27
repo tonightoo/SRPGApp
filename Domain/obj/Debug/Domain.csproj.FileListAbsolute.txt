@@ -1,0 +1,6 @@
+D:\MyProgram\C#\SRPGApp\Domain\bin\Debug\Domain.dll
+D:\MyProgram\C#\SRPGApp\Domain\bin\Debug\Domain.pdb
+D:\MyProgram\C#\SRPGApp\Domain\obj\Debug\Domain.csproj.AssemblyReference.cache
+D:\MyProgram\C#\SRPGApp\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
+D:\MyProgram\C#\SRPGApp\Domain\obj\Debug\Domain.dll
+D:\MyProgram\C#\SRPGApp\Domain\obj\Debug\Domain.pdb
