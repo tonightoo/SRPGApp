@@ -54,6 +54,8 @@
     <Compile Include="Repositories\IArenaRepository.cs" />
     <Compile Include="Repositories\IMapRepository.cs" />
     <Compile Include="State\AttackUnitCommand.cs" />
+    <Compile Include="State\ComTurnEnd.cs" />
+    <Compile Include="State\ComTurnStart.cs" />
     <Compile Include="State\ComTurnState.cs" />
     <Compile Include="State\MoveUnitState.cs" />
     <Compile Include="State\SelectCommandState.cs" />

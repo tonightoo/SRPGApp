@@ -78,11 +78,11 @@ namespace Domain.Models
         {
             get { return currentHp; }
             set {
-                if (value < 0)
-                {
-                    currentHp = 0; 
-                    return;
-                }
+//                if (value < 0)
+//                {
+//                    currentHp = 0; 
+//                    return;
+//                }
 
                 if (value > maxHp)
                 {

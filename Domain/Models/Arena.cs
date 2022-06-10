@@ -42,6 +42,39 @@ namespace Domain.Models
             return map[cursorPoint.X][cursorPoint.Y].Unit;
         }
 
+        public Point? GetPoint(Unit unit)
+        {
+            for (int x = 0; x < map.countX; x++)
+            {
+                for (int y = 0; y < map[x].Count; y++)
+                {
+                    if (map[x][y].Unit is null) continue;
+
+                    if (map[x][y].Unit.Equals(unit)) return new Point(x, y);
+                }
+            }
+            return null;
+        }
+
+        public void Next()
+        {
+            int nowTurnId = teams.Values.Where((t) => t.isMyTurn).First().TeamId;
+            int nextTurnId = nowTurnId + 1;
+
+            if (teams.ContainsKey(nextTurnId))
+            {
+                teams[nowTurnId].isMyTurn = false;
+                teams[nextTurnId].isMyTurn = true;
+            }
+            else
+            {
+                teams[nowTurnId].isMyTurn = false;
+                teams[Constants.Team.PLAYER_TEAM_ID].isMyTurn = true;
+            }
+            history.Clear();
+        }
+
+
 #region "内部メソッド"
 
         private void AddUnits()

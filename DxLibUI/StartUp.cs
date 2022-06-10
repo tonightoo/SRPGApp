@@ -5,6 +5,7 @@ using UseCase.Initialize;
 using UseCase.Repositories;
 using UseCase.UpdateArena;
 using UseCase.UserInput;
+using UseCase.Com;
 using InMemoryInfrastructure;
 
 namespace DxLibUI
@@ -40,6 +41,10 @@ namespace DxLibUI
             //ユーザー入力のコントローラー
             ServiceCollection.AddTransient<UserInputController>();
             ServiceCollection.AddTransient<IUserInputUseCase, UserInputUseCase>();
+
+            //コンピュータの思考
+            //遷移関係
+
 
         }
 

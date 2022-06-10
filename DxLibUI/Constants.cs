@@ -6,12 +6,25 @@ namespace DxLibUI
     internal class Constants
     {
 
+        internal class Turn
+        {
+            public static readonly string COM_TURN_START_TEXT = "COM TURN";
+
+            public static readonly string PLAYER_TURN_START_TEXT = "PLYER TURN";
+
+            public static readonly int TOPLEFT_X = 50;
+
+            public static readonly int TOPLEFT_Y = 100;
+
+            public static readonly int FONT_SIZE = 100;
+        }
+
+
         internal class Color
         {
             public static readonly uint ENABLED_COLOR = GetColor(255, 255, 255);
 
             public static readonly uint DISABLED_COLOR = GetColor(128, 128, 128);
-
         }
 
         internal class Window

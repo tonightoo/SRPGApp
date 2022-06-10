@@ -2,6 +2,7 @@
 using System.Drawing;
 using Domain;
 using Domain.Models;
+using Domain.Models.Commands;
 using UseCase.Move;
 
 namespace UseCase.State
@@ -66,9 +67,9 @@ namespace UseCase.State
                             unit.IsAttacked = false;
                             unit.IsMoved = false;
                         }
-                        arena.teams[Constants.Team.PLAYER_TEAM_ID].isMyTurn = false;
-                        arena.history.Clear();
+                        arena.Next();
                         arena.state = new ComTurnState();
+                        arena.state.Enter(arena);
                         break;
                     }
             }

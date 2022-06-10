@@ -21,6 +21,7 @@ namespace UseCase.Move
 
         public List<Point> SeekMovePoints(Point point, int step)
         {
+            points = new HashSet<Point>();
             Search4(point, step + 1);
             
             return points.ToList();

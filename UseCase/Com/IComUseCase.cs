@@ -1,10 +1,11 @@
-﻿
+﻿using Domain.Models;
+
 namespace UseCase.Com
 {
     public interface IComUseCase
     {
 
-        void ComTurn();
+        void ComTurn(Arena arena);
 
     }
 }

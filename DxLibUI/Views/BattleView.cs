@@ -40,8 +40,13 @@ namespace DxLibUI.Views
                 }
             }
 
+            int fontSize = 0;
             foreach (Text text in viewModel.texts)
             {
+                if (fontSize != text.fontSize)
+                {
+                    SetFontSize(text.fontSize);
+                }
                 DrawString(text.x, text.y, text.content, text.color);
             }
 

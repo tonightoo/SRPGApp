@@ -27,7 +27,7 @@ namespace UseCase.State
                 arena.map[arena.cursorPoint.X][arena.cursorPoint.Y].Unit is null)
             {
                 Point selectedPoint = arena.selectedPoint ?? throw new NullReferenceException();
-                ICommand moveCommand = new MoveCommand(selectedPoint, arena.cursorPoint);
+                ICommand moveCommand = new MoveCommand(selectedPoint, arena.cursorPoint, arena.selectedUnit);
                 moveCommand.Execute(arena);
 
                 //移動先を削除

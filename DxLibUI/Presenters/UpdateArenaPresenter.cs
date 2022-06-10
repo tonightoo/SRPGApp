@@ -225,6 +225,29 @@ namespace DxLibUI.Presenters
                 }
             }
 
+            int fontSize = Constants.Turn.FONT_SIZE;
+
+            if (arena.state is ComTurnStart)
+            {
+                content = Constants.Turn.COM_TURN_START_TEXT;
+                x = Constants.Turn.TOPLEFT_X;
+                y = Constants.Turn.TOPLEFT_Y;
+                color = Constants.Color.ENABLED_COLOR;
+
+                viewModel.texts.Add(new Text(content, x, y, color, fontSize));
+            }
+
+            if (arena.state is ComTurnEnd)
+            {
+                content = Constants.Turn.PLAYER_TURN_START_TEXT;
+                x = Constants.Turn.TOPLEFT_X;
+                y = Constants.Turn.TOPLEFT_Y;
+                color = Constants.Color.ENABLED_COLOR;
+
+                viewModel.texts.Add(new Text(content, x, y, color, fontSize));
+            }
+
+
             _updater.CreateViewModel = viewModel;
         }
     }

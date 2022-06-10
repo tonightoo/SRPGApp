@@ -26,10 +26,10 @@ namespace InMemoryInfrastructure
 
             squares[2][2].Unit = Unit.Builder.SetName("unit1")
                                              .SetImageId(0)
-                                             .SetMaxHpAndHp(10)
+                                             .SetMaxHpAndHp(50)
                                              .SetMaxMpAndMp(10)
-                                             .SetAttack(5)
-                                             .SetDeffece(5)
+                                             .SetAttack(20)
+                                             .SetDeffece(8)
                                              .SetMagicAttack(5)
                                              .SetMagicDeffence(5)
                                              .SetTechnic(5)
@@ -41,10 +41,10 @@ namespace InMemoryInfrastructure
 
             squares[6][5].Unit = Unit.Builder.SetName("unit3")
                                              .SetImageId(6)
-                                             .SetMaxHpAndHp(10)
+                                             .SetMaxHpAndHp(40)
                                              .SetMaxMpAndMp(10)
-                                             .SetAttack(5)
-                                             .SetDeffece(5)
+                                             .SetAttack(10)
+                                             .SetDeffece(4)
                                              .SetMagicAttack(5)
                                              .SetMagicDeffence(5)
                                              .SetTechnic(5)
@@ -59,8 +59,8 @@ namespace InMemoryInfrastructure
                                              .SetImageId(3)
                                              .SetMaxHpAndHp(10)
                                              .SetMaxMpAndMp(10)
-                                             .SetAttack(10)
-                                             .SetDeffece(10)
+                                             .SetAttack(15)
+                                             .SetDeffece(6)
                                              .SetMagicAttack(10)
                                              .SetMagicDeffence(10)
                                              .SetTechnic(10)
@@ -69,6 +69,22 @@ namespace InMemoryInfrastructure
                                              .SetTeamId(2)
                                              .SetWeapon(Weapon.WeaponType.Spear)
                                              .Build();
+
+            squares[8][9].Unit = Unit.Builder.SetName("unit4")
+                                             .SetImageId(9)
+                                             .SetMaxHpAndHp(40)
+                                             .SetMaxMpAndMp(10)
+                                             .SetAttack(10)
+                                             .SetDeffece(4)
+                                             .SetMagicAttack(10)
+                                             .SetMagicDeffence(10)
+                                             .SetTechnic(10)
+                                             .SetLuck(10)
+                                             .SetStep(3)
+                                             .SetTeamId(2)
+                                             .SetWeapon(Weapon.WeaponType.Bow)
+                                             .Build();
+
 
             Map map = new Map(squares);
 

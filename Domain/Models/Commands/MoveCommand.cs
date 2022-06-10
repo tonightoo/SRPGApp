@@ -11,16 +11,19 @@ namespace Domain.Models.Commands
 
         private readonly Point _destination;
 
-        public MoveCommand(Point source, Point destination)
+        private readonly Unit _moveUnit;
+
+        public MoveCommand(Point source, Point destination, Unit moveUnit)
         {
             this._source = source;
             this._destination = destination;
+            this._moveUnit = moveUnit;
         }
 
         public void Execute(Arena arena)
         {
             //移動先にユニットを設定
-            arena.map[_destination.X][_destination.Y].Unit = arena.selectedUnit;
+            arena.map[_destination.X][_destination.Y].Unit = _moveUnit;
             arena.map[_destination.X][_destination.Y].Unit.IsMoved = true;
 
             //移動元ユニットを削除
