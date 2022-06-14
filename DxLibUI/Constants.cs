@@ -34,6 +34,10 @@ namespace DxLibUI
             public static readonly int HEIGHT = 600;
 
             public static readonly int COLOR_BIT_NUM = 32;
+
+            public static readonly int CENTER_WIDTH = WIDTH / 2;
+
+            public static readonly int CENTER_HEIGHT = HEIGHT / 2;
         }
 
         internal class UnitInfo
