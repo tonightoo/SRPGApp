@@ -19,6 +19,12 @@ namespace DxLibUI
             public static readonly int FONT_SIZE = 100;
         }
 
+        internal class MapArea
+        {
+            public static readonly int TOPLEFT_X = 50;
+
+            public static readonly int TOPLEFT_Y = 50;
+        }
 
         internal class Color
         {

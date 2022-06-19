@@ -12,9 +12,11 @@ namespace Domain.Models
 
         public Dictionary<int, Team> teams;
 
-        public Point cursorPoint = new Point(0,0);
+        public Point cursorPoint = new Point(Constants.Arena.CURSOL_X, Constants.Arena.CURSOL_Y);
 
         public Point? selectedPoint = null;
+
+        public Point cameraPoint = new Point(Constants.Arena.CAMERA_X, Constants.Arena.CAMERA_Y);
 
         public CommandPanel commandPanel;
 
@@ -73,6 +75,7 @@ namespace Domain.Models
             }
             history.Clear();
         }
+
 
 
 #region "内部メソッド"

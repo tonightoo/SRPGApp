@@ -1,4 +1,6 @@
-﻿using Domain.Models;
+﻿using Domain;
+using Domain.Models;
+using System;
 using System.Drawing;
 using System.Linq;
 
@@ -20,6 +22,12 @@ namespace UseCase.State
             {
                 arena.cursorPoint.Y = y;
             }
+
+            if (Math.Abs(arena.cameraPoint.Y - arena.cursorPoint.Y) > Constants.Arena.CAMERA_RANGE)
+            {
+                arena.cameraPoint.Y -= 1;
+            }
+
         }
 
         /// <summary>
@@ -35,6 +43,11 @@ namespace UseCase.State
             {
                 arena.cursorPoint.Y = y;
             }
+
+            if (Math.Abs(arena.cursorPoint.Y - arena.cameraPoint.Y) > Constants.Arena.CAMERA_RANGE)
+            {
+                arena.cameraPoint.Y += 1;
+            }
         }
 
         /// <summary>
@@ -49,6 +62,11 @@ namespace UseCase.State
             {
                 arena.cursorPoint.X = x;
             }
+
+            if (Math.Abs(arena.cameraPoint.X - arena.cursorPoint.X) > Constants.Arena.CAMERA_RANGE)
+            {
+                arena.cameraPoint.X -= 1;
+            }
         }
 
         /// <summary>
@@ -62,6 +80,11 @@ namespace UseCase.State
             if (x < arena.map.countX)
             {
                 arena.cursorPoint.X = x;
+            }
+
+            if (Math.Abs(arena.cursorPoint.X - arena.cameraPoint.X) > Constants.Arena.CAMERA_RANGE)
+            {
+                arena.cameraPoint.X += 1;
             }
         }
 

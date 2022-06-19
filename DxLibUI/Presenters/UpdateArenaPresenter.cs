@@ -16,6 +16,10 @@ namespace DxLibUI.Presenters
 
         private ViewModel _viewModel;
 
+        private Point _drawAreaTopLeft;
+
+        private Point _drawAreaBottomRight;
+
         public UpdateArenaPresenter(ViewUpdater updater)
         {
             this._updater = updater;
@@ -25,6 +29,10 @@ namespace DxLibUI.Presenters
         {
             this._viewModel = new ViewModel();
 
+            _drawAreaTopLeft = new Point(arena.cameraPoint.X - Domain.Constants.Arena.CAMERA_RANGE,
+                                                arena.cameraPoint.Y - Domain.Constants.Arena.CAMERA_RANGE);
+            _drawAreaBottomRight = new Point(arena.cameraPoint.X + Domain.Constants.Arena.CAMERA_RANGE,
+                                                arena.cameraPoint.Y + Domain.Constants.Arena.CAMERA_RANGE);
             //マップ画像
             this.AddMapGraphs(arena);
 
@@ -67,12 +75,16 @@ namespace DxLibUI.Presenters
             {
                 for (int j = 0; j < arena.map[i].Count; j++)
                 {
+                    //カメラ外なら飛ばす
+                    if (IsOutsideAngleOfView(i, j)) continue;
+
+
                     //マップチップの描画
                     int imageId = arena.map[i][j].ImageId;
 
                     graphId = Image.GetInstance().mapchips[imageId];
-                    x = i * width;
-                    y = j * height;
+                    x = (i - _drawAreaTopLeft.X) * width;
+                    y = (j - _drawAreaTopLeft.Y) * height;
 
                     Graph graph = new Graph(graphId, x, y, width, height);
                     _viewModel.graphs.Add(graph);
@@ -103,8 +115,8 @@ namespace DxLibUI.Presenters
             int width = Image.Constants.MAPCHIP_WIDTH;
             int height = Image.Constants.MAPCHIP_HEIGHT;
             int graphId = Image.GetInstance().selectSign;
-            int x = arena.cursorPoint.X * width;
-            int y = arena.cursorPoint.Y * height;
+            int x = (arena.cursorPoint.X - _drawAreaTopLeft.X) * width;
+            int y = (arena.cursorPoint.Y - _drawAreaTopLeft.Y) * height;
             Graph selectGraph = new Graph(graphId, x, y, width, height);
             _viewModel.graphs.Add(selectGraph);
         }
@@ -267,8 +279,10 @@ namespace DxLibUI.Presenters
                 int height = Image.Constants.MAPCHIP_HEIGHT;
                 foreach (Point point in arena.movablePoints)
                 {
-                    int x = point.X * width;
-                    int y = point.Y * height;
+                    if (IsOutsideAngleOfView(point.X,point.Y)) continue;
+
+                    int x = (point.X - _drawAreaTopLeft.X) * width;
+                    int y = (point.Y - _drawAreaTopLeft.Y) * height;
                     Graph graph = new Graph(Image.GetInstance().movableSign, x, y, width, height, true);
                     _viewModel.graphs.Add(graph);
                 }
@@ -287,8 +301,10 @@ namespace DxLibUI.Presenters
                 int height = Image.Constants.MAPCHIP_HEIGHT;
                 foreach (Point point in arena.attackablePoints)
                 {
-                    int x = point.X * width;
-                    int y = point.Y * height;
+                    if (IsOutsideAngleOfView(point.X, point.Y)) continue;
+
+                    int x = (point.X - _drawAreaTopLeft.X) * width;
+                    int y = (point.Y - _drawAreaTopLeft.Y) * height;
                     Graph graph = new Graph(Image.GetInstance().attackableSign, x, y, width, height, true);
                     _viewModel.graphs.Add(graph);
                 }
@@ -330,7 +346,14 @@ namespace DxLibUI.Presenters
 
                 _viewModel.texts.Add(new Text(content, x, y, color, fontSize));
             }
+        }
 
+        private bool IsOutsideAngleOfView(int x, int y)
+        {
+            return x < _drawAreaTopLeft.X ||
+                   x > _drawAreaBottomRight.X ||
+                   y < _drawAreaTopLeft.Y ||
+                   y > _drawAreaBottomRight.Y;
         }
 
     }
